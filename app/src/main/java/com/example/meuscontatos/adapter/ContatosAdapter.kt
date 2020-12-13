@@ -14,8 +14,8 @@ class ContatosAdapter(
 
     inner class ContatoViewHolder(layoutContatoView: View):
         RecyclerView.ViewHolder(layoutContatoView) {
-        val nomeTv: TextView = layoutContatoView.findViewById(R.id.nomeTv)
-        val telefoneTv: TextView = layoutContatoView.findViewById(R.id.telefoneTv)
+        val nomeTv : TextView = layoutContatoView.findViewById(R.id.nomeTv)
+        val telefoneTv : TextView = layoutContatoView.findViewById(R.id.telefoneTv)
     }
 
     // Chamado pelo LayoutManager para criar uma nova View
@@ -42,7 +42,7 @@ class ContatosAdapter(
         // recebida como parâmetro no construtor do Adapter. Ou seja, ao ser clicada a
         // View terá chamará a função definida na Activity passando a posição
         holder.itemView.setOnClickListener{
-            onContatoClickListener.onContatoClick(position)
+            onContatoClickListener.onClickListener(position)
         }
     }
 

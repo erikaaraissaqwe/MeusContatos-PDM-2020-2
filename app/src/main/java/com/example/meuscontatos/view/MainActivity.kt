@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), OnContatoClickListener {
 
     private val NOVO_CONTATO_REQUEST_CODE = 0
-
     object Extras{
         val EXTRA_CONTATO = "EXTRA_CONTATO"
     }
@@ -32,17 +31,30 @@ class MainActivity : AppCompatActivity(), OnContatoClickListener {
     private lateinit var contatosController : ContatoController
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        contatosController = ContatoController(this)
+        contatosList = contatosController.buscaContatos()
+
+        contatosLayoutManager = LinearLayoutManager(this)
+
+        contatosAdapter = ContatosAdapter(contatosList, this)
+
+        listaContatosRv.adapter = contatosAdapter
+        listaContatosRv.layoutManager = contatosLayoutManager
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == NOVO_CONTATO_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             val novoContato = data.getParcelableExtra<Contato>(EXTRA_CONTATO)
-            if (novoContato != null){
+            if (novoContato != null) {
                 contatosController.insereContato(novoContato)
 
                 contatosList.add(novoContato)
                 contatosAdapter.notifyDataSetChanged()
             }
-
         }
     }
 
@@ -53,36 +65,21 @@ class MainActivity : AppCompatActivity(), OnContatoClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         if (item.itemId == R.id.novoContatoMi){
-        val novoContatoIntent = Intent(this, ContatoActivity::class.java)
-        startActivityForResult(novoContatoIntent, NOVO_CONTATO_REQUEST_CODE)
-        true
-    }
-
-    else
-        false
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        contatosController = ContatoController(this)
-        contatosList = contatosController.buscaContatos()
-        for (i in 1..50){
-            Contato(
-                "nome $i",
-                "telefone $i",
-                "email $i"
-            )
+            val novoContatoIntent = Intent(this, ContatoActivity::class.java)
+            startActivityForResult(novoContatoIntent, NOVO_CONTATO_REQUEST_CODE)
+            true
         }
+        else
+            false
 
-        contatosLayoutManager = LinearLayoutManager(this)
 
-        contatosAdapter = ContatosAdapter(contatosList, this)
 
-        listaContatosRv.adapter = contatosAdapter
-        listaContatosRv.layoutManager = contatosLayoutManager
+    fun onContatoClick(position: Int) {
+        val contato : Contato = contatosList[position]
+        Toast.makeText(this, contato.nome, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onContatoClick(position:Int){
+    override fun onClickListener(position: Int) {
         val contato : Contato = contatosList[position]
         Toast.makeText(this, contato.nome, Toast.LENGTH_SHORT).show()
     }

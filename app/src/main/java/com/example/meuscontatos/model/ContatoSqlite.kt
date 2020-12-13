@@ -1,18 +1,18 @@
-package com.example.meuscontatos.model
-
+import ContatoSqlite.Constantes.CONTATO_TABLE
+import ContatoSqlite.Constantes.CREATE_CONTATO_TABLE_STATEMENT
+import ContatoSqlite.Constantes.EMAIL_COLUMN
+import ContatoSqlite.Constantes.LISTA_CONTATOS_DATABASE
+import ContatoSqlite.Constantes.NOME_COLUMN
+import ContatoSqlite.Constantes.TELEFONE_COLUMN
 import android.content.ContentValues
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
+import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import com.example.meuscontatos.R
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.CONTATO_TABLE
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.CREATE_CONTATO_TABLE_STATEMENT
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.EMAIL_COLUMN
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.LISTA_CONTATOS_DATABASE
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.NOME_COLUMN
-import com.example.meuscontatos.model.ContatoSqlite.Constantes.TELEFONE_COLUMN
-import java.sql.SQLException
+import com.example.meuscontatos.model.Contato
+import com.example.meuscontatos.model.ContatoDao
 
 class ContatoSqlite(context: Context): ContatoDao {
     object Constantes {

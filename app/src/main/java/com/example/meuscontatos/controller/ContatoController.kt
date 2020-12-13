@@ -1,8 +1,8 @@
 package com.example.meuscontatos.controller
 
+import ContatoSqlite
 import com.example.meuscontatos.model.Contato
 import com.example.meuscontatos.model.ContatoDao
-import com.example.meuscontatos.model.ContatoSqlite
 import com.example.meuscontatos.view.MainActivity
 
 class ContatoController(mainActivity: MainActivity) {
@@ -13,9 +13,7 @@ class ContatoController(mainActivity: MainActivity) {
     }
 
     fun insereContato(contato : Contato){
-        contatoDao.createContato(
-            contato
-        )
+        contatoDao.createContato(contato)
     }
 
     fun buscaContato(nome : String){

@@ -2,5 +2,8 @@ package com.example.meuscontatos.adapter
 
 interface OnContatoClickListener {
 
-    fun onClickListener(position: Int)
+    // Funções adicionadas para ContextMenu
+    fun onEditarMenuItemClick(position: Int)
+    fun onRemoverMenuItemClick(position: Int)
+    fun onContatoClick(position: Int)
 }

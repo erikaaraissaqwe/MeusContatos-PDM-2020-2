@@ -3,27 +3,47 @@ package com.example.meuscontatos.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.meuscontatos.R
+import android.view.View
+import com.example.meuscontatos.databinding.ActivityContatoBinding
 import com.example.meuscontatos.model.Contato
-import kotlinx.android.synthetic.main.activity_contato.*
+
 
 class ContatoActivity : AppCompatActivity() {
+    // Classe de ViewBinding
+    private lateinit var activityContatoBinding: ActivityContatoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contato)
+        activityContatoBinding = ActivityContatoBinding.inflate(layoutInflater)
+        setContentView(activityContatoBinding.root)
 
-       salvarBt.setOnClickListener{
+        // Novo contato ou editar contato
+        val contato: Contato? = intent.getParcelableExtra(MainActivity.Extras.EXTRA_CONTATO)
+        if (contato != null) {
+            // Editar contato
+            activityContatoBinding.nomeContatoEt.setText(contato.nome)
+            activityContatoBinding.nomeContatoEt.isEnabled = false
+            activityContatoBinding.telefoneContatoEt.setText(contato.telefone)
+            activityContatoBinding.emailContatoEt.setText(contato.email)
+            if (intent.action == MainActivity.Extras.VISUALIZAR_CONTATO_ACTION) {
+                // Visualizar contato
+                activityContatoBinding.telefoneContatoEt.isEnabled = false
+                activityContatoBinding.emailContatoEt.isEnabled = false
+                activityContatoBinding.salvarBt.visibility = View.GONE
+            }
+        }
+
+        activityContatoBinding.salvarBt.setOnClickListener {
             val novoContato = Contato(
-                nomeContatoEt.text.toString(),
-                telefoneContatoEt.text.toString(),
-                emailContatoEt.text.toString()
+                activityContatoBinding.nomeContatoEt.text.toString(),
+                activityContatoBinding.telefoneContatoEt.text.toString(),
+                activityContatoBinding.emailContatoEt.text.toString()
             )
 
-           val retornoIntent = Intent()
-           retornoIntent.putExtra(MainActivity.Extras.EXTRA_CONTATO, novoContato)
-           setResult(RESULT_OK, retornoIntent)
-           finish()
+            val retornoIntent = Intent()
+            retornoIntent.putExtra(MainActivity.Extras.EXTRA_CONTATO, novoContato)
+            setResult(RESULT_OK, retornoIntent)
+            finish()
         }
     }
 }

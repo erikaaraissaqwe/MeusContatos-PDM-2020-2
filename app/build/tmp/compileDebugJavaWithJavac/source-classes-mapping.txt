@@ -1,0 +1,14 @@
+com/example/meuscontatos/databinding/ActivityRecuperarSenhaBinding.java
+ com.example.meuscontatos.databinding.ActivityRecuperarSenhaBinding
+com/example/meuscontatos/BuildConfig.java
+ com.example.meuscontatos.BuildConfig
+com/example/meuscontatos/databinding/ActivityCadastrarBinding.java
+ com.example.meuscontatos.databinding.ActivityCadastrarBinding
+com/example/meuscontatos/databinding/ActivityAutenticacaoBinding.java
+ com.example.meuscontatos.databinding.ActivityAutenticacaoBinding
+com/example/meuscontatos/databinding/LayoutContatoBinding.java
+ com.example.meuscontatos.databinding.LayoutContatoBinding
+com/example/meuscontatos/databinding/ActivityContatoBinding.java
+ com.example.meuscontatos.databinding.ActivityContatoBinding
+com/example/meuscontatos/databinding/ActivityMainBinding.java
+ com.example.meuscontatos.databinding.ActivityMainBinding

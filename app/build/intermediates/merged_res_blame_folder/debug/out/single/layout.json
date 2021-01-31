@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_cadastrar.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_cadastrar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_recuperar_senha.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_recuperar_senha.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_contato.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\layout_contato.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main_contato.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_main_contato.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_autenticacao.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_autenticacao.xml"
+    },
+    {
+        "merged": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_contato.xml",
+        "source": "C:\\Users\\Vcard\\Desktop\\MeusContatos-PDM-2020-2\\app\\src\\main\\res\\layout\\activity_contato.xml"
+    }
+]
